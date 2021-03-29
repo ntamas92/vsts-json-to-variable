@@ -11,7 +11,7 @@ export async function ProcessKeys(jsonData: any, prefix: string, shouldPrefix: b
 
     return new Promise<Dictionary<string>>(async (resolve, reject) => {
 
-        let variables: Dictionary<string> = {["kuy"]: "muty"}
+        let variables: Dictionary<string> = {};
 
         //Recurse through using the queue
         while (dataQueue.length > 0) {

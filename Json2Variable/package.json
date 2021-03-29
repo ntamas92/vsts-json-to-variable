@@ -35,9 +35,10 @@
     "config/"
   ],
   "dependencies": {
+    "argparse": "^2.0.1",
     "azure-pipelines-task-lib": "~2.11.3",
+    "graceful-fs": "^4.2.4",
     "reflect-metadata": "^0.1.13",
-    "tslib": "^1.9.3",
-    "graceful-fs": "^4.2.4"
+    "tslib": "^1.9.3"
   }
 }
