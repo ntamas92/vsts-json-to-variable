@@ -22,12 +22,12 @@
     "url": "https://github.com/jeffpriz/vsts-json-to-variable"
   },
   "devDependencies": {
-    "typescript": "^2.4.2",
-    "@types/node": "^6.0.31",
-    "mocha": "6.2.0",
+    "@types/chai": "4.1.7",
     "@types/mocha": "5.2.7",
+    "@types/node": "^6.0.31",
     "chai": "4.2.0",
-    "@types/chai": "4.1.7"
+    "mocha": "6.2.0",
+    "typescript": "^2.9.2"
   },
   "files": [
     "dist/",
