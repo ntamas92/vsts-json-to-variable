@@ -15,9 +15,6 @@ export const mergeVariablesInFiles = async (files: string[]) : Promise<Dictionar
 
         resolveVariablesInValues(filteredVariables);
 
-        console.log("printing variables:")
-        printVariables(filteredVariables)
-
         return filteredVariables;
 }
 
@@ -27,11 +24,6 @@ const mergeVariables = (existing: Dictionary<string>, current: Dictionary<string
     }
 }
 
-const printVariables = (variables: Dictionary<string>) => {
-    for (let key in variables) {
-        console.log(`${key}::${variables[key]}`)
-    }
-}
 
 const resolveVariablesInValues = (variables: Dictionary<string>) => {
     const regex = /\$\([\w\.\-]+\)/g

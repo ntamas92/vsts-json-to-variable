@@ -1,5 +1,7 @@
 import { mergeVariablesInFiles } from "./src/json2variable";
+import { WriteFile } from "./src/getFSData";
 import { ArgumentParser } from "argparse";
+import { Dictionary } from "./src/common";
 
 
 const asyncWrapper = async () => {
@@ -7,15 +9,26 @@ const asyncWrapper = async () => {
         description: "DeploymentConfig merger"
     })
 
-    parser.add_argument('-f', '--files', { nargs: "+", help: "Input files to merge. The merge order is their precedence" });
+    parser.add_argument('-f', '--files', { nargs: "+", help: "Input files to merge. The merge order is their precedence." });
+    parser.add_argument('-o', '--output', { help: "Output file path. If not provided, only console output will be used." })
 
     let args = parser.parse_args();
 
     console.log(args.files)
 
-    let result = mergeVariablesInFiles(args.files);
+    let result = await mergeVariablesInFiles(args.files);
 
-    console.log(result)
+    printVariables(result)
+
+    if (args.output) {
+        await WriteFile(args.output, JSON.stringify(result, null, 2));
+    }
+}
+
+const printVariables = (variables: Dictionary<string>) => {
+    for (let key in variables) {
+        console.log(`${key}::${variables[key]}`)
+    }
 }
 
 asyncWrapper()

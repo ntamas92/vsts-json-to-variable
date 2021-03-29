@@ -6,7 +6,7 @@ export async function OpenFile(filename: string): Promise<string> {
     return filecontent
 }
 
-export async function WriteFile(filename: string, fileData: object): Promise<any> {
+export async function WriteFile(filename: string, fileData: any): Promise<any> {
     var completeSuccess: boolean = false;
     var filecontent: string = "";
     return new Promise<boolean>(async (resolve, reject) => {
