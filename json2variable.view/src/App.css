@@ -24,6 +24,10 @@ button:hover {
   background-color: #5469d4;
 }
 
+button:disabled{
+  background-color: grey;
+}
+
 .left {
   float: left;
   width: 30%;
@@ -41,11 +45,10 @@ button:hover {
 }
 
 .folder-view {
-  min-height: 500px;
+  min-height: 300px;
   background-color: blanchedalmond;
-  overflow: scroll;
-}
-
-.merged-content {
-  overflow: hidden;
+  /* text-overflow: ellipsis; */
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: auto;
 }

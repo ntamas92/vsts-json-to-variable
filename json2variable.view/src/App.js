@@ -4,6 +4,7 @@ import TreeItem from '@material-ui/lab/TreeItem';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import './App.css';
+import FilterableKeyValueList from "./ValueList/FilterableKeyValueList";
 
 const ipcRenderer = window.ipcrenderer
 
@@ -35,7 +36,7 @@ function App() {
       window.alert("Fukin select sum file already!")
       return
     }
-    
+
     const result = ipcRenderer.sendSync('merge-json-files', selectedFiles.reverse())
     setMergedContent(result)
   }
@@ -63,15 +64,13 @@ function App() {
 
       </div>
       <div className="right">
-        <div>
-          <button type="button" onClick={handleJsonMerge}>Merge files</button>
-        </div>
-        
-        <div className="merged-content">
-          {mergedContent && Object.keys(mergedContent).map(k => (<li><b>{k}</b>::{mergedContent[k]}</li>))}
-        </div>
+          <div>
+            <button disabled={selectedFiles.length === 0} type="button" onClick={handleJsonMerge}>Merge selected files</button>
+          </div>
+
+        <FilterableKeyValueList values={mergedContent} />
+
       </div>
-      
     </div>
 
   );

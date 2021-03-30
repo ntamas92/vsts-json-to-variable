@@ -1,0 +1,23 @@
+.merged-container {
+    overflow-x: scroll;
+}
+
+.merged-content {
+    background-color: blanchedalmond;
+    text-overflow: clip;
+    white-space: nowrap;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* .might-overflow {
+    text-overflow: ellipsis;
+    overflow : hidden;
+    white-space: nowrap;
+}
+
+.might-overflow:hover {
+    text-overflow: clip;
+    white-space: normal;
+    word-break: break-all;
+} */
