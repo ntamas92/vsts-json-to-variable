@@ -1,7 +1,7 @@
-import { mergeVariablesInFiles } from "./src/json2variable";
-import { WriteFile } from "./src/getFSData";
+import { mergeVariablesInFiles } from "./json2variable";
+import { WriteFile } from "./getFSData";
 import { ArgumentParser } from "argparse";
-import { Dictionary } from "./src/common";
+import { Dictionary } from "./common";
 
 
 const asyncWrapper = async () => {
